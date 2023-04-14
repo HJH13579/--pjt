@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{  person.username  }}님의 프로필</h1>
+  {% comment %} 팔로잉과 팔로워 수 표시 {% endcomment %}
+  <div>
+    팔로잉 : {{ person.followings.all|length }} | 팔로워 : {{  person.followers.all|length }}
+    {% comment %} 팔로잉 : {{ person.followings.count }} | 팔로워 : {{  person.followers.count  }} {% endcomment %}
+  </div>
+  {% comment %} 팔로우를 할 수 있는 버튼 만들기 {% endcomment %}
+  <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+    {% csrf_token %}
+    {% if request.user in person.followers.all %}
+      <button type="submit" class="btn btn-danger">언팔로우</button>
+    {% else %}
+      <button type="submit" class="btn btn-success">팔로우</button>
+    {% endif %}
+  </form>
+  <hr>
+
+  <h2>{{  person.username }}의 게시글</h2>
+  {% for movie in person.movie_set.all %}
+    <div class='card'>
+      <div class='card-body'>
+        <h5 class='card-title'>{{ movie.title }}</h5>
+        <p class='card-text'>{{ movie.content }}</p>
+        <a href="{% url 'movies:detail' movie.pk %}" class="btn btn-primary">자세히 보기</a>
+      </div>
+    </div>
+  {% endfor %}
+  <hr><br><br>
+
+  <h3>{{  person.username }}님의 댓글 수</h3>
+  <p><b>{{  person.comment_set.all|length }}</b></p>
+  <hr>
+  <div class='card'>
+    <div class='card-body'>
+      <h5 class='card-title'>{{  person.username }}님의 댓글</h5>
+      {% for comment in person.comment_set.all %}
+        <p class='card-text'>{{ comment.content }}</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <hr><br>
+
+  <h4>{{  person.username }}님이 좋아한 게시글</h4>
+  {% for movie in person.like_movies.all %}
+    <div class='card'>
+      <div class='card-body'>
+        <h5 class='card-title'>{{ movie.title }}</h5>
+        <p class='card-text'>{{ movie.content }}</p>
+        <a href="{% url 'movies:detail' movie.pk %}" class="btn btn-primary">자세히 보기</a>
+      </div>
+    </div>
+  {% endfor %}
+  <hr><br><br>
+
+  <a href="{% url 'movies:index' %}" class='btn btn-success'>목록보기</a>
+
+{% endblock content %}
+
+
