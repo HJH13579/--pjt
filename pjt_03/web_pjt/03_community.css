@@ -1,0 +1,23 @@
+/* 03_community.css */
+/* 아래에 코드를 작성해 주세요. */
+.gray_underline {
+  background-color: gray;
+  height: 1px;
+  width: 1000px;
+  margin: 20px 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.mid {
+  margin-left: 50%;
+}
+
+.space {
+  margin-left: 20px;
+}
+

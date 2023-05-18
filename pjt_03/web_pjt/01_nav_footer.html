@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <title>Community</title>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md text-white bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/logo.png" alt="" width="100px" /></a>
+      
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Community</a>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a> -->
+            <span class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#loginModal">Login</span>
+          </li>
+        <!-- <a></a>태그로는 modal을 적용할 수 없어서 span 등 다른 태그로 바꿔야합니다.   -->
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- 모달을 적용받으려면 아이디를 줘야합니다. -->
+  <div class="modal" id="loginModal" tabindex="-1"> 
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="signin-form-wrap">
+            
+            <div class="blue_underline"></div>
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label padding">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="text-secondary">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label padding">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input padding" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<footer class="fixed">
+  Web-bootstrap PJT, by hyun</footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

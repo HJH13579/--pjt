@@ -1,0 +1,11 @@
+/* 02_home.css */
+/* 아래에 코드를 작성해 주세요. */
+.fixed  {
+  position: fixed;
+  margin: 0 auto; 
+  left: 50%; 
+  transform: translate(-50%,-50%);
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
