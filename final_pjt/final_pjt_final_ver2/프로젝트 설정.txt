@@ -1,0 +1,42 @@
+
+python -m venv venv  #가상환경 생성
+
+source ./venv/Scripts/activate  #가상환경 활성화
+
+pip install -r requirements.txt
+
+
+python manage.py runserver  #서버 실행
+
+
+가상환경 활성화되어 있으면 서버실행
+
+
+추가 설치(되어있음)
+pip install django-cors-headers
+pip install dj-rest-auth
+pip install 'dj-rest-auth[with_social]'
+하고 해야됨
+pip freeze > requirements.txt
+
+vue 관련
+
+npm i
+npm install vue bootstrap-vue bootstrap
+npm run serve
+
+cd back-server
+cd front-server
+
+cd back-server
+cd front-server
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata movies/movie_data.json
+python manage.py runserver
+
+npm run serve
+
+유튜브 예고편 url양식은 https://youtu.be/4Oky0NapIB4 이런 형태로 되어있음
+

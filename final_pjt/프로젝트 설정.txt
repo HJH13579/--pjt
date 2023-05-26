@@ -1,0 +1,28 @@
+cd back-server
+cd front-server
+
+<BackEnd>
+python -m venv venv  #가상환경 생성
+
+source venv/Scripts/activate  #가상환경 활성화
+
+pip install -r requirements.txt
+
+pip freeze > requirements.txt
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py movies/loaddata movie_data.json
+
+python manage.py runserver
+
+<FrontEnd>
+
+pip install i 
+pip install django-cors-headers
+pip install dj-rest-auth
+pip install 'dj-rest-auth[with_social]'
+npm install vue bootstrap-vue bootstrap
+
+npm run serve
